@@ -2,16 +2,9 @@
 
 apt install -y libapache2-mod-fcgid
 
-## tambahkan repositori php 5.6
-
-apt install -y apt-transport-https ca-certificates curl software-properties-common
-curl -fsSL https://packages.sury.org/php/apt.gpg | apt-key add -
-add-apt-repository "deb https://packages.sury.org/php/ $(lsb_release -cs) main"
-apt update
-
 ## install php5.6 dan php fpm
 
-apt install -y php5.6 php5.6-fpm php7.0-fpm
+apt install -y php5.6 php5.6-fpm php-fpm
 
 ## verifikasi instalasi paket php-fpm
 
@@ -35,7 +28,7 @@ nano /etc/apache2/sites-enabled/domain.conf
 	SetHandler "proxy:unix:/var/run/php/php5.6-fpm.sock|fcgi://localhost/"
 </Location>
 <Location /php7>
-	SetHandler "proxy:unix:/var/run/php/php7.0-fpm.sock|fcgi://localhost/"
+	SetHandler "proxy:unix:/var/run/php/php7.3-fpm.sock|fcgi://localhost/"
 </Location>
 ```
 
@@ -43,8 +36,8 @@ apache2ctl configtest
 
 systemctl restart apache2
 
-mkdir /var/www/domain/php5
-mkdir /var/www/domain/php7
+mkdir /var/www/kudaliar.local/php5
+mkdir /var/www/kudaliar.local/php7
 
 ## tambahkan file index untuk masing-masing direktori versi php
 

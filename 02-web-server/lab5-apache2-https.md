@@ -35,7 +35,7 @@ nano /etc/apache2/sites-enable/[domain].conf
                 SetHandler "proxy:unix:/var/run/php/php5.6-fpm.sock|fcgi://localhost/"
         </Location>
         <Location /php7>
-                SetHandler "proxy:unix:/var/run/php/php7.0-fpm.sock|fcgi://localhost/"
+                SetHandler "proxy:unix:/var/run/php/php7.3-fpm.sock|fcgi://localhost/"
         </Location>
 </VirtualHost>
 ```

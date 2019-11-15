@@ -1,6 +1,6 @@
 ## install dan aktifkan php extension yg dibutuhkan
 
-apt install -y php7.0-mbstring php7.0-mysql
+apt install -y php-mbstring php-mysql
 
 ## instalasi paket phpmyadmin pada server
 
