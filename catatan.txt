@@ -257,6 +257,7 @@ systemctl status nginx
 
 apt install haproxy -y
 
+cd /etc/haproxy
 cp haproxy.cfg{,.orig}
 
 nano haproxy.cfg
